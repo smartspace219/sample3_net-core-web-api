@@ -1,0 +1,45 @@
+Hi Myroslav S., I noticed your profile and would like to offer you my project. We can discuss any details over chat.
+8:18 PM
+Develop a .NET 8 WEB API; "log-data" to receive any number of log-lines as per "normal" application logging, eg. one or more log entries in one call.
+
+In front of the data is a small JSON with metadata, for now only with id of sender (serial). New line (Unix) indicates new data record with separate row in the datata. I expect regular HTTP(S) post. Demo using CURL (or something better).
+
+The here are exemples of log data where everthing after the ; is free text.
+
+Fields before the ; are fixed size and shall be parsed and inserted into separate fields int the "log_data" table:
+
+CREATE TABLE log_data (
+id BIGSERIAL NOT NULL,
+serial CHARACTER(4) NOT NULL,
+created TIME NOT NULL,
+component CHARACTER(3),
+event CHARACTER(4),
+short_1 CHARACTER(10) DEFAULT '0',
+short_2 CHARACTER(10) DEFAULT '0',
+information TEXT,
+PRIMARY KEY (id)
+);
+
+Example data for one call to API, note that num_1 and num_2 are fixed sizes 4 characters, value range -999 to 9999:
+
+{"serial": "F812"}
+1710166717 ebus INFO ebs;start;None;None
+1710166717 ebus INFO mqt;init;('localhost', 1883);ebus
+1710166717 ebus INFO dtt;init;('ebus', False, 'ebus.yaml');treehandler_mqtt
+1710166717 ebus INFO dtt;init;treehandler;None
+1710166717 config INFO cfg;start;None;None
+1710166717 config INFO dtt;init;treehandler;None
+1710166717 config INFO cfg;git;dir_exists;init_repo
+1710166717 ebus INFO ebs;load_hex;get_hex_file;ep-rog-2022.hex
+1710166718 ebus INFO mqt;start_loop;None;None
+1710166718 ebus INFO mqt;connected;None;None
+1710166719 config INFO cfg;load;yaml;loaded_yaml
+1710166719 config INFO mqt;init;('localhost', 1883);config
+1710166719 config INFO dtt;init;('config', False, None);treehandler_mqtt
+1710166719 config INFO cfg;load;json;file_load
+1710166720 ebus ERROR dtt;request_item;config;timeout
+1710166722 ebus ERROR dtt;request_item;system;timeout
+1710166723 config INFO mqt;start_loop;None;None
+1710166723 config INFO mqt;connected;None;None
+1710166724 aio INFO und;start;None;None
+1710166724 aio INFO dio;init;init;Dummy Mode: False
