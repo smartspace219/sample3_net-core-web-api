@@ -9,6 +9,7 @@
       "WebApplication1/1.0.0": {
         "dependencies": {
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2",
+          "StackExchange.Redis": "2.7.33",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -128,6 +129,29 @@
           }
         }
       },
+      "Pipelines.Sockets.Unofficial/2.2.8": {
+        "dependencies": {
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.2.8.1080"
+          }
+        }
+      },
+      "StackExchange.Redis/2.7.33": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Pipelines.Sockets.Unofficial": "2.2.8"
+        },
+        "runtime": {
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.7.33.41805"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.4.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -165,7 +189,8 @@
             "fileVersion": "6.4.0.0"
           }
         }
-      }
+      },
+      "System.IO.Pipelines/5.0.1": {}
     }
   },
   "libraries": {
@@ -293,6 +318,20 @@
       "path": "npgsql.entityframeworkcore.postgresql/8.0.2",
       "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512"
     },
+    "Pipelines.Sockets.Unofficial/2.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
+      "path": "pipelines.sockets.unofficial/2.2.8",
+      "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
+    },
+    "StackExchange.Redis/2.7.33": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2kCX5fvhEE824a4Ab5Imyi8DRuGuTxyklXV01kegkRpsWJcPmO6+GAQ+HegKxvXAxlXZ8yaRspvWJ8t3mMClfQ==",
+      "path": "stackexchange.redis/2.7.33",
+      "hashPath": "stackexchange.redis.2.7.33.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",
       "serviceable": true,
@@ -320,6 +359,13 @@
       "sha512": "sha512-1Hh3atb3pi8c+v7n4/3N80Jj8RvLOXgWxzix6w3OZhB7zBGRwsy7FWr4e3hwgPweSBpwfElqj4V4nkjYabH9nQ==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "path": "system.io.pipelines/5.0.1",
+      "hashPath": "system.io.pipelines.5.0.1.nupkg.sha512"
     }
   }
 }

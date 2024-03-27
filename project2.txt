@@ -11,6 +11,7 @@ Fields before the ; are fixed size and shall be parsed and inserted into separat
 CREATE TABLE log_data (
 id BIGSERIAL NOT NULL,
 serial CHARACTER(4) NOT NULL,
+sequence smallint,
 created TIME NOT NULL,
 component CHARACTER(3),
 event CHARACTER(4),
@@ -22,7 +23,7 @@ PRIMARY KEY (id)
 
 Example data for one call to API, note that num_1 and num_2 are fixed sizes 4 characters, value range -999 to 9999:
 
-{"serial": "F812"}
+{"serial": "AB10", "sequence": 23}
 1710166717 ebus INFO ebs;start;None;None
 1710166717 ebus INFO mqt;init;('localhost', 1883);ebus
 1710166717 ebus INFO dtt;init;('ebus', False, 'ebus.yaml');treehandler_mqtt
@@ -43,3 +44,5 @@ Example data for one call to API, note that num_1 and num_2 are fixed sizes 4 ch
 1710166723 config INFO mqt;connected;None;None
 1710166724 aio INFO und;start;None;None
 1710166724 aio INFO dio;init;init;Dummy Mode: False
+//data = "{\"serial\": \"F812\", \"sequence\": 23}\r\n1710166717 ebus INFO ebs;start;None;None\r\n1710166717 ebus INFO mqt;init;('localhost', 1883);ebus\r\n1710166717 ebus INFO dtt;init;('ebus', False, 'ebus.yaml');treehandler_mqtt\r\n1710166717 ebus INFO dtt;init;treehandler;None\r\n1710166717 config INFO cfg;start;None;None\r\n1710166717 config INFO dtt;init;treehandler;None\r\n1710166717 config INFO cfg;git;dir_exists;init_repo\r\n1710166717 ebus INFO ebs;load_hex;get_hex_file;ep-rog-2022.hex\r\n1710166718 ebus INFO mqt;start_loop;None;None\r\n1710166718 ebus INFO mqt;connected;None;None\r\n1710166719 config INFO cfg;load;yaml;loaded_yaml\r\n1710166719 config INFO mqt;init;('localhost', 1883);config\r\n1710166719 config INFO dtt;init;('config', False, None);treehandler_mqtt\r\n1710166719 config INFO cfg;load;json;file_load\r\n1710166720 ebus ERROR dtt;request_item;config;timeout\r\n1710166722 ebus ERROR dtt;request_item;system;timeout\r\n1710166723 config INFO mqt;start_loop;None;None\r\n1710166723 config INFO mqt;connected;None;None\r\n1710166724 aio INFO und;start;None;None\r\n1710166724 aio INFO dio;init;init;Dummy Mode: False\r\n";
+

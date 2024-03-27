@@ -1,0 +1,26 @@
+All returns "OK" as a number, with different values to be decoded by the client.
+
+COMPLETE TASK:
+
+Name existing api to: api/v1/log/post
+New api: api/v1/log/get-time/<Serial>
+• For instance, api/v1/log/get-time/12344
+• Returns unix time from Redis, 0 if not exist
+Add customizable numeric return value for API functions
+• https://learn.microsoft.com/en-us/aspnet/web-api/overview/getting-started-with-aspnet-web-api/action-results, return OK codes for all calls – api-user must decode different numeric values.
+Change inserts to use COPY
+Change to unix time in post message
+Add redis data cache.
+• Lookup serial number in redis, if exist then process post-message
+• Add unix time from the first line as value to the serial key
+Restructure user/database, something like this (a log_user shall only be allowed to INSERT/COPY into log_data in Postgres:
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON DATABASE log_database FROM PUBLIC;
+
+CREATE USER log_user;
+GRANT USAGE ON SCHEMA log_schema TO log_user;
+GRANT COPY ON TABLE log_data TO log_user;
+
+Change JSON to: {"serial": "AB10", "sequence": 23} and add a sequence field in the table.
+Change log_data to a hyper_table, may affect table structure.
+Maintain a “initdb.sql” script with all initialization etc

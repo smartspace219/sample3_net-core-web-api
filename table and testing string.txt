@@ -1,0 +1,14 @@
+CREATE TABLE log_data (
+created TIME NOT NULL,
+sequence_number SMALLINT,
+serial CHARACTER(4) NOT NULL,
+process CHARACTER(10),
+event CHARACTER(10),
+short_1 CHARACTER(10) DEFAULT '0',
+short_2 CHARACTER(10) DEFAULT '0',
+information TEXT
+);
+
+testing string
+
+"{\"serial\": \"F812\", \"sequence\": 23}\r\n1710166717 ebus INFO ebs;start;None;None\r\n1710166717 ebus INFO mqt;init;('localhost', 1883);ebus\r\n1710166717 ebus INFO dtt;init;('ebus', False, 'ebus.yaml');treehandler_mqtt\r\n1710166717 ebus INFO dtt;init;treehandler;None\r\n1710166717 config INFO cfg;start;None;None\r\n1710166717 config INFO dtt;init;treehandler;None\r\n1710166717 config INFO cfg;git;dir_exists;init_repo\r\n1710166717 ebus INFO ebs;load_hex;get_hex_file;ep-rog-2022.hex\r\n1710166718 ebus INFO mqt;start_loop;None;None\r\n1710166718 ebus INFO mqt;connected;None;None\r\n1710166719 config INFO cfg;load;yaml;loaded_yaml\r\n1710166719 config INFO mqt;init;('localhost', 1883);config\r\n1710166719 config INFO dtt;init;('config', False, None);treehandler_mqtt\r\n1710166719 config INFO cfg;load;json;file_load\r\n1710166720 ebus ERROR dtt;request_item;config;timeout\r\n1710166722 ebus ERROR dtt;request_item;system;timeout\r\n1710166723 config INFO mqt;start_loop;None;None\r\n1710166723 config INFO mqt;connected;None;None\r\n1710166724 aio INFO und;start;None;None\r\n1710166724 aio INFO dio;init;init;Dummy Mode: False\r\n"

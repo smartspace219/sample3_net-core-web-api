@@ -1,8 +1,40 @@
 [
   {
-    "ContainingType": "WebApplication1.Controllers.WeatherForecastController",
+    "ContainingType": "WebApplication1.Controllers.LogApiController",
+    "Method": "InsertSerial",
+    "RelativePath": "api/v1/log/add-serial/{serial}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serial",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.LogApiController",
+    "Method": "getTime",
+    "RelativePath": "api/v1/log/get-time/{serial}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serial",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.LogApiController",
     "Method": "PostLogData",
-    "RelativePath": "WeatherForecast/LogData",
+    "RelativePath": "api/v1/log/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

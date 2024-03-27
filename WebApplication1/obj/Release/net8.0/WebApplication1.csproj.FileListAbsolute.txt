@@ -72,3 +72,6 @@ D:\.net\sample3\WebApplication1\obj\Release\net8.0\refint\WebApplication1.dll
 D:\.net\sample3\WebApplication1\obj\Release\net8.0\WebApplication1.pdb
 D:\.net\sample3\WebApplication1\obj\Release\net8.0\WebApplication1.genruntimeconfig.cache
 D:\.net\sample3\WebApplication1\obj\Release\net8.0\ref\WebApplication1.dll
+D:\.net\sample3\WebApplication1\obj\Release\net8.0\WebApplication1.sourcelink.json
+D:\.net\sample3\WebApplication1\bin\Release\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\.net\sample3\WebApplication1\bin\Release\net8.0\StackExchange.Redis.dll
